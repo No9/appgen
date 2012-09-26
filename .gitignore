@@ -1,0 +1,8 @@
+*~
+node_modules
+.DS_Store
+gen*
+_site
+test/base/_gen
+README.html
+*.off
