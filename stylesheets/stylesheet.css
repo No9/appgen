@@ -66,7 +66,7 @@ a:hover {
 header {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
@@ -75,9 +75,12 @@ header h1 {
   letter-spacing: -1px;
   font-size: 72px;
   color: #fff;
-  line-height: 1;
+  line-height: 1.5;
   margin-bottom: 0.2em;
   width: 540px;
+  font-weight: bold;
+  background: transparent url(../images/appgen-logo.png) 260px 43px no-repeat;
+  background-size: 54px 54px;
 }
 
 header h2 {
@@ -149,8 +152,9 @@ header a.button {
   background: transparent url(../images/github-button.png) 0 0 no-repeat;
 }
 aside a.button {
-  width: 138px;
-  padding-left: 64px;
+  xwidth: 138px;
+  width: 186px;
+  padding-left: 16px;
   display: block;
   background: transparent url(../images/download-button.png) 0 0 no-repeat;
   margin-bottom: 20px;
@@ -477,3 +481,9 @@ footer a:hover {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {}
+
+
+
+.longvert {
+  height: 800px !important;
+}
