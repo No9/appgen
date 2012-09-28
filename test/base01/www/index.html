@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+#{#www/include/index-header.html}
+
+<div>
+<h1>INDEX #{conf.a}</h1>
+<ul>
+  <li>a</li>
+  <li>##{#foo}</li>
+  <li>b</li>
+  <li>###{#foo}</li>
+  <li>c</li>
+  
+  <% for( var i = 0; i < 3; i++ ) { %>
+  <li><%-i%><%-conf.a%></li>
+  <% } %>
+
+</ul>
+</div>
+
+####{#index-footer}
+
+</body>
+</html>

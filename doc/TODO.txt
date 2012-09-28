@@ -1,0 +1,33 @@
+- validate output of import macro
+
+- handlebars.js support
+
+
+- semantics of macro property interpolation needs to be explained - "not required" means marker syntax remains for macro steps
+
+- update template macro
+- validate output of template macro
+
+- ${} is not a great interpolate syntax in JSON - low visual diff
+
+- remove opt:{} support - move to same level as name prop?
+
+- jsonquery escape regexp syntax function needed in import macro select - implement as step
+
+- appgen.exec api - proper error reporting
+
+- proper step tests
+- make spec parse errors pretty
+- pref for interpolate chars
+
+- asset pipelining steps
+- external command step
+
+- watch trigger
+
+- example project with custom macro and Step
+
+- js code for conf - require it in
+
+                                   
+

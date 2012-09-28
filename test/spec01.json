@@ -1,0 +1,23 @@
+{
+  "res": {
+    "base": "base01",
+    "gen": "gen01"
+  },
+
+  "conf":{
+    "platform":"web",
+    "version":"0.0.1",
+    "ext":"txt"
+  },
+  
+  "steps": [
+    {"name":"fork","opt":{"forks":[
+      {"name":"ios","spec":{"conf":{"platform":"ios"}}},
+      {"name":"android","spec":{"conf":{"platform":"android"}}}
+    ]}},
+    {"name":"load","opt":{"path":"README.${conf.ext}"}},
+    {"name":"insert","opt":{"on":"gen.resource.text"}},
+    {"name":"save","opt":{"path":"README-${conf.platform}.${conf.ext}"}}
+  ]
+}
+

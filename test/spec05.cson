@@ -1,0 +1,60 @@
+{
+
+# node ../bin/appgen --conf.block=true spec05.cson
+
+  res:
+    base: "base01",
+    gen:  "gen01"
+
+  conf:
+    fail: false,
+    pass: true,
+    foo: 'bar',
+    color: {r:1,g:2,b:3},
+    nums: ['one','two','three'],
+
+  steps: [
+    { name:'print', msg:'first'}
+    { name:'print', msg:'${conf.foo}'}
+    { name:'print', msg:'-${conf.foo}-'}
+    { name:'print', msg:'$${conf.foo}'}
+    { name:'print', msg:{a:1}}
+    { name:'print', msg:'${conf.color}'}
+
+    { name:'set',   ref:'conf.red', value:'#0f0'}
+    { name:'print', msg:'red=${conf.red}'}
+
+    { name:'set',   ref:'conf.red', value:{source:'color-${conf.red}',match:'f',insert:'F'} }
+    { name:'print', msg:'red=${conf.red}'}
+
+
+    { name:'print', opt:{ if:"conf.fail", msg:'FAIL' } }
+    { name:'print', opt:{ if:"conf.pass", msg:'PASS' } }
+
+    { name:'expect', opt:{ expect:'cathy', value:'${opt.alice}', alice:'${opt.bob}', bob:'cathy' } }
+
+    { name:  'iterate', opt:{ 
+      list:  ['aa','bb','cc'],
+      index: 0,
+      steps: [{ name:'print', opt:{ msg:'${gen.item}' } }]
+    }}
+
+    { name:'print', opt:{ msg:'after iterate' } }
+
+    { name:'for', opt:{
+      each:'${conf.nums}',
+      steps:[{ name:'print', opt:{ msg:'${gen.item}' } }]
+    }}
+
+    { name:'print', opt:{ msg:'block: ${conf.block}' } }
+
+    { name:'block', 'if':'conf.block', steps:[
+      { name:'print', msg:'inside block 1' },
+      { name:'print', msg:'inside block 2' }
+    ]}
+
+    { name:'exec', cmd:'ls -lisah'}
+  ]
+}
+
+

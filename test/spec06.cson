@@ -1,0 +1,23 @@
+{
+  res:
+    base: "base01",
+    gen: "gen01"
+
+  conf:
+    a: 'AAA'
+
+  pref:
+    steps: {
+      timerstart: { require:'./timer', class:'TimerStart' }
+      timerend:   { require:'./timer', class:'TimerEnd' }
+    }
+
+  steps: [
+    { name:'timerstart' }
+    { name:'import', opt:{ from:'www/css/*.css', to:'www' } }
+    { name:'template', opt:{ paths:'www/*.html' } }
+    { name:'timerend' }
+  ]
+}
+
+
